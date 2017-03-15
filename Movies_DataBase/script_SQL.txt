@@ -1,0 +1,98 @@
+--INTEEROGARI SQL PENTRU CREARE SI POPULARE TABELE
+
+CREATE TABLE Filme(
+ id_film int,
+denumire VARCHAR(40),
+website VARCHAR(100),
+an_aparitie DATE,
+PRIMARY KEY(id_film) 
+) ;
+
+CREATE TABLE Actori(
+id_actor int,
+nume VARCHAR(40),
+prenume VARCHAR(40),
+nationalitate VARCHAR(100),
+oras VARCHAR(100),
+data_nasterii DATE,
+inaltime float,
+greutate float,
+email VARCHAR(40),
+telefon VARCHAR(40),
+PRIMARY KEY(id_actor) 
+) ;
+
+CREATE TABLE Intermediar(
+id_intermediar int AUTO_INCREMENT NOT NULL,
+id_actor int,
+id_film int,
+ CONSTRAINT `FK_constr` FOREIGN KEY (id_actor) REFERENCES Actori (id_actor) ON DELETE CASCADE,
+  CONSTRAINT `FK_const2r` FOREIGN KEY (id_film) REFERENCES Filme (id_film) ON DELETE CASCADE, 
+PRIMARY KEY(id_intermediar) 
+) ;
+
+
+
+INSERT INTO Filme(id_film, denumire, website, an_aparitie)
+VALUES(1, 'The Gladiator', 'http://www.imdb.com/title/tt0172495/', '2000-05-14');
+
+INSERT INTO Filme(id_film, denumire, website, an_aparitie)
+VALUES(2, 'Pride & Prejudice', 'http://www.imdb.com/title/tt0414387/', '2005-23-11');
+
+INSERT INTO Filme(id_film, denumire, website, an_aparitie)
+VALUES(3, 'The Bucket List', 'http://www.imdb.com/title/tt0825232/', '2008-01-11'); -- Cuba Gooding and james amrshall
+
+INSERT INTO Filme(id_film, denumire, website, an_aparitie)
+VALUES(4, 'The Imitation Game', 'http://www.imdb.com/title/tt2084970/?ref_=nm_knf_i1', '2014-12-25');
+
+INSERT INTO Filme(id_film, denumire, website, an_aparitie)
+VALUES(5, 'Atonement', 'http://www.imdb.com/title/tt0783233/?ref_=nmawd_awd_4', '2008-01-11');
+
+INSERT INTO Filme(id_film, denumire, website, an_aparitie)
+VALUES(6, 'Men of Honor', 'http://www.imdb.com/title/tt0203019/?ref_=nm_knf_i3', '2000-11-10'); -- Cuba Gooding
+
+INSERT INTO Filme(id_film, denumire, website, an_aparitie)
+VALUES(7, 'Gladiator', 'http://www.imdb.com/title/tt0104346/?ref_=nm_knf_i2', '1992-03-06'); 
+
+
+
+INSERT INTO Actori(id_actor, nume, prenume, nationalitate, oras, data_nasterii, inaltime, greutate, email, telefon)
+VALUES(1, 'Marshall', 'James', 'american', 'New York', '1967-01-02', 1.8, 76, 'james.marshall.@gmail.com', '0743286754');
+
+INSERT INTO Actori(id_actor, nume, prenume, nationalitate, oras, data_nasterii, inaltime, greutate, email, telefon)
+VALUES(2, 'Cuba', 'Gooding', 'american', 'New York', '1968-01-02', 1.78, 74, 'cuba.gooding.@gmail.com', '0741116798');
+
+INSERT INTO Actori(id_actor, nume, prenume, nationalitate, oras, data_nasterii, inaltime, greutate, email, telefon)
+VALUES(3, 'Keira', 'Knightley', 'British', 'Teddington', '1968-01-02', 1.7, 55, 'keira.knightley.@gmail.com', '0741178780');
+
+INSERT INTO Actori(id_actor, nume, prenume, nationalitate, oras, data_nasterii, inaltime, greutate, email, telefon)
+VALUES(4, 'James', 'McAvoy', 'British', 'Port Glasgow', '1979-04-02', 1.7, 75, 'mcavoy001.@gmail.com', '0741178780');
+
+INSERT INTO Actori(id_actor, nume, prenume, nationalitate, oras, data_nasterii, inaltime, greutate, email, telefon)
+VALUES(5, 'Saoirse' , 'Ronan', 'American', 'The Bronx', '1994-04-12', 1.68, 55, 'saroise11.@gmail.com', '0741900080');
+
+
+
+INSERT INTO intermediar (id_intermediar, id_actor ,id_film)
+VALUES (1, 3, 2);
+
+INSERT INTO intermediar (id_intermediar, id_actor ,id_film)
+VALUES (2, 3, 5);
+
+INSERT INTO intermediar (id_intermediar, id_actor ,id_film)
+VALUES (3, 1, 3);
+
+INSERT INTO intermediar (id_intermediar, id_actor ,id_film)
+VALUES (4, 2, 3);
+
+INSERT INTO intermediar (id_intermediar, id_actor ,id_film)
+VALUES (5, 2, 6);
+
+INSERT INTO intermediar (id_intermediar, id_actor ,id_film)
+VALUES (6, 1, 7);
+
+INSERT INTO intermediar (id_intermediar, id_actor ,id_film)
+VALUES (7, 4, 5);
+
+INSERT INTO intermediar (id_intermediar, id_actor ,id_film)
+VALUES (8, 5, 5);
