@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FILME DATABASE</title>
+    <link rel=stylesheet type="text/css" href="index.css">
+</head>
+<body>
+<div>
+    <p>Meniu</p>
+    <br><a href="vizualizare_filme.php" class="button">Vizualizare Filme BD</a></br>
+    <br><a href="vizualizare_actori.php" class="button">Vizualizare Actori BD</a></br>
+    <ul>
+        <br>
+        <li>
+            <a href="inserare_film.php" class="button">Inserare Film</a>
+        </li>
+        </br><br>
+        <li>
+            <a href="inserare_actor.php" class="button">Inserare Actor</a>
+        </li>
+        </br><br>
+        <li>
+            <a href="stergere_film.php" class="button">Stergere Film</a>
+        </li>
+        </br><br>
+        <li>
+            <a href="stergere_actor.php" class="button">Stergere Actor</a>
+        </li>
+        </br>
+        <br>
+        <li>
+            <a href="afisare_detalii_film.php" class="button">Afisare Detalii Film cautat</a>
+        </li>
+        </br><br>
+        <li>
+            <a href="afisare_detalii_actor.php" class="button">Afisare Detalii Actor cautat</a>
+        </li>
+        </br>
+
+
+
+        <br>
+        <li>
+            <a href="#" class="button">Afisarea tuturor actorilor care au jucat in filmul introdus</a>
+            <ul>
+                <li>
+                    <form action="afisare_actori_din_film.php" method="get">
+                        Denumire Film: <input type="text" name="id" value="0"><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </li>
+            </ul>
+        </li>
+    </br>
+<br>
+       <li>
+            <a href="#" class="button">Afisarea tuturor filmelor in care a jucat actorul introdus</a>
+            <ul>
+                <li>
+                    <form action="afisare_filmele_unui_actor.php" method="get">
+                       Nume Prenume actor: <input type="text" name="id" value="0"><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </li>
+            </ul>
+        </li>
+    </br>
+    </ul>
+</div>
+</body>
+</html>
